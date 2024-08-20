@@ -3,9 +3,22 @@
 namespace Luminar\Http\Controller;
 
 use Luminar\Http\Response;
+use Luminar\RenderEngine\View;
 
 class AbstractController
 {
+    /**
+     * @var View $view
+     */
+    protected View $view;
+
+    /**
+     * @param View $view
+     */
+    public function __construct(View $view)
+    {
+        $this->view = $view;
+    }
 
     /**
      * @param string $key
@@ -36,7 +49,7 @@ class AbstractController
      */
     protected function render(string $view, array $data = []): Response
     {
-        // TODO: Implement this function after creating RenderEngine
+        return $this->view->render($view, $data);
     }
 
     /**

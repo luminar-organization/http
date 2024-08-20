@@ -9,12 +9,10 @@ class Response
     private array $headers;
     private string $response;
     private int $status;
-    private AbstractController $controller;
-    public function __construct(string $response, int $status,AbstractController $controller)
+    public function __construct(string $response, int $status)
     {
         $this->response = $response;
         $this->status = $status;
-        $this->controller = $controller;
     }
 
     /**
@@ -31,14 +29,6 @@ class Response
     public function getStatus(): int
     {
         return $this->status;
-    }
-
-    /**
-     * @return AbstractController
-     */
-    public function getController(): AbstractController
-    {
-        return $this->controller;
     }
 
     /**
