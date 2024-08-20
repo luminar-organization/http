@@ -1,4 +1,6 @@
 # Luminar HTTP
+![Tests Status](https://img.shields.io/github/actions/workflow/status/luminar-organization/core/tests.yml?label=Tests)
+
 The Luminar HTTP package provides a robust set of tools for handling HTTP requests and responses in PHP. It Includes classes for managing requests, sessions, cookies, and middleware.
 
 ## Installation
