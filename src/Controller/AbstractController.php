@@ -37,7 +37,7 @@ class AbstractController
      */
     protected function redirect(string $url, int $status = 302): Response
     {
-        $response = new Response("", $status, $this);
+        $response = new Response("", $status);
         $response->setHeader('Location', $url);
         return $response;
     }
@@ -59,7 +59,7 @@ class AbstractController
      */
     protected function json(array $response, int $status = 200): Response
     {
-        $response = new Response(json_encode($response), $status, $this);
+        $response = new Response(json_encode($response), $status);
         $response->setHeader('Content-Type', 'application/json');
         return $response;
     }
@@ -71,6 +71,6 @@ class AbstractController
      */
     protected function text(string $text, int $status = 200): Response
     {
-        return new Response($text, $status, $this);
+        return new Response($text, $status);
     }
 }

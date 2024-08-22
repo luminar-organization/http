@@ -112,7 +112,7 @@ class SessionManager
     }
 
     /**
-     * Gets the session Id
+     * Gets the session id
      *
      * @return string|bool
      */
@@ -122,7 +122,7 @@ class SessionManager
     }
 
     /**
-     * Sets the session Id
+     * Sets the session id
      *
      * @param string $id
      * @return void
