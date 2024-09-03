@@ -13,6 +13,7 @@ class Response
     {
         $this->response = $response;
         $this->status = $status;
+        $this->headers = [];
     }
 
     /**
