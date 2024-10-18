@@ -35,14 +35,20 @@ class Request
     protected array $serverParams;
 
     /**
+     * @var array $requestParams
+     */
+    protected array $requestParams;
+
+    /**
      * @param array $queryParams
      * @param array $bodyParams
      * @param array $headers
      * @param string $method
      * @param string $uri
      * @param array $serverParams
+     * @param array $requestParams
      */
-    public function __construct(array $queryParams = [], array $bodyParams = [], array $headers = [], string $method = 'GET', string $uri = '/', array $serverParams = [])
+    public function __construct(array $queryParams = [], array $bodyParams = [], array $headers = [], string $method = 'GET', string $uri = '/', array $serverParams = [], array $requestParams = [])
     {
         $this->queryParams = $queryParams;
         $this->bodyParams = $bodyParams;
@@ -50,6 +56,24 @@ class Request
         $this->method = $method;
         $this->uri = $uri;
         $this->serverParams = $serverParams;
+        $this->requestParams = $requestParams;
+    }
+
+    /**
+     * @return array
+     */
+    public function getRequestParams(): array
+    {
+        return $this->requestParams;
+    }
+
+    /**
+     * @param mixed $key
+     * @return mixed
+     */
+    public function getRequestParam(mixed $key): mixed
+    {
+        return $this->requestParams[$key] ?? null;
     }
 
     /**
